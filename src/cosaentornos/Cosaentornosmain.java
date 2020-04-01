@@ -67,7 +67,8 @@ public class Cosaentornosmain {
                 dinero = dinero - apuesta;
             }
 
-             System.out.println("El número seleccionado por la ruleta fue: "+(int)aleatoria+"\n"+
+             System.out.println(
+                 "El número seleccionado por la ruleta fue: "+(int)aleatoria+"\n"+
                 "Jugador->num apostado: "+numapuesta+", Cantidad: $"+apuesta+"= ganancia: $"(int)ganancia+"\n"+
                 "Dinero del jugador es: "+dinero+"\n"+
                 "Dinero de  la ruleta: "+dinerorul+"\n"+
