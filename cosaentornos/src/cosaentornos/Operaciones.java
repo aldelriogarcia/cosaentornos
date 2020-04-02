@@ -58,7 +58,7 @@ public class Operaciones {
     }
    
     /**
-     *Multiplica la ganancia por un factor y 
+     *Saca la ganancia y 
      *lo suma al dinero del jugador para obtener un total.
      * 
      * @param dinero el dinero que tiene el jugador
@@ -70,5 +70,18 @@ public class Operaciones {
         int inicial = (int) (apuesta * factor);
         dinero = inicial + dinero;
         return dinero;
+        }    
+    /**
+     *Saca la ganancia
+     * 
+     * 
+     * @param apuesta la cantidad apostada
+     * @param factor la cantidad por la que se multiplica para obtener la ganancia
+     * @return la ganancia
+     */
+     static public int devuelveDineroGanado (int apuesta,double factor){
+        int ganancia = (int) (apuesta * factor);
+        return ganancia;
+    
     }
 }
