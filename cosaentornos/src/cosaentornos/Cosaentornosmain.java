@@ -31,7 +31,7 @@ public class Cosaentornosmain {
      * @param color el color del numero que saque la ruleta
      **/
      
-        System.out.println("Introduce un número entre 16 y 36"
+        System.out.println("Introduce un número entre 16 y 36 "
                 + "que sea múltiplo de cuatro");
         int casilleros = input.nextInt();
         while (casilleros%4!=0||casilleros<16||casilleros>36){
@@ -72,18 +72,25 @@ public class Cosaentornosmain {
        int colorjugador=Operaciones.ColorJugador(numapuesta);
        int color=Operaciones.ColorRuleta(numapuesta, (int)aleatorio);
        
-       
+       int ganancia = 0;
         if (numapuesta == (int)aleatorio) {
                 dinero = Operaciones.TotalJugador(dinero, apuesta, 16);
-                
+                ganancia=Operaciones.devuelveDineroGanado(apuesta, 16);
             } else if (color == colorjugador) {
                 dinero = Operaciones.TotalJugador(dinero, apuesta, 1.8);
-
+                ganancia=Operaciones.devuelveDineroGanado(apuesta, 1.8);
             } else if ((color != colorjugador) || (numapuesta != (int) aleatorio)) {
                 inicial = 0;
                 dinero = dinero - apuesta;
             }
+        
+        Salidas.output(aleatorio,numapuesta,apuesta,ganancia,dinero,dinerorul,inicial, color, colorjugador);
         }
+        if (dinero<=inicial){
+                System.out.println("Gana la Casa");
+        } else {
+                System.out.println("Gana el jugador");
+            } 
         }
     }
 
