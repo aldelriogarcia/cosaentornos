@@ -6,6 +6,7 @@
 package cosaentornos;
 
 import cosaentornos.src.cosaentornos.Operaciones;
+import cosaentornos.src.cosaentornos.Salidas;
 import java.util.Scanner;
 
 /**
@@ -66,17 +67,14 @@ public class Cosaentornosmain {
                 ganancia=0;
                 dinero = dinero - apuesta;
             }
+            Salidas salida = new Salidas();
+            salida.output(aleatoria,numapuesta,apuesta,ganancia,dinero,dinerorul,inicial);
+            }
 
-             System.out.println(
-                 "El número seleccionado por la ruleta fue: "+(int)aleatoria+"\n"+
-                "Jugador->num apostado: "+numapuesta+", Cantidad: $"+apuesta+"= ganancia: $"+ganancia+"\n"+
-                "Dinero del jugador es: "+dinero+"\n"+
-                "Dinero de  la ruleta: "+dinerorul+"\n"+
-                "La cantidad límite para ganar es: "+inicial*50);    
-        }
         if (dinero<=0){
                 System.out.println("Gana la Casa");
         } else {
                 System.out.println("Gana el jugador");
             } 
     }
+}
